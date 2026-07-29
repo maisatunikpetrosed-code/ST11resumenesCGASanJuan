@@ -26,18 +26,19 @@
     --dark-line:rgba(239,233,221,0.18);
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html,body{background:#E7DECC;}
+  html,body{background:#F1EADB;}
   body{
     min-height:100vh;
-    display:flex;align-items:center;justify-content:center;
-    padding:28px 16px;
+    display:flex;align-items:flex-start;justify-content:center;
+    padding:0;
     font-family:"IBM Plex Sans",sans-serif;
     -webkit-font-smoothing:antialiased;
   }
+  @media (min-width:760px){ body{align-items:center;padding:32px 16px;} }
 
   .poster{
     position:relative;
-    width:min(1080px,96vw);
+    width:min(1080px,100vw);
     aspect-ratio:4/5;
     container-type:inline-size;
     background:
@@ -46,7 +47,7 @@
       var(--paper);
     color:var(--text);
     overflow:hidden;
-    box-shadow:0 26px 70px rgba(60,48,26,.28);
+    box-shadow:0 8px 34px rgba(60,48,26,.12);
   }
   .poster::before{
     content:"";
@@ -187,7 +188,7 @@
 
   /* ---------- convocatoria ---------- */
   .call{
-    margin-top:2.4cqw;padding-top:2.5cqw;
+    margin-top:1.9cqw;padding-top:2.2cqw;
     border-top:1px solid var(--rule);
     display:flex;align-items:flex-end;justify-content:space-between;gap:3cqw;
   }
@@ -214,16 +215,17 @@
 
   /* ---------- footer ---------- */
   .foot{
-    margin-top:2.4cqw;padding-top:2.2cqw;
+    margin-top:1.9cqw;padding-top:2.0cqw;
     border-top:1px solid var(--rule);
-    display:flex;flex-direction:column;gap:1.5cqw;
+    display:flex;flex-direction:column;align-items:center;gap:0.8cqw;
+    text-align:center;
     font-family:"IBM Plex Mono",monospace;
     font-size:1.86cqw;letter-spacing:.02em;color:var(--text-dim);
   }
-  .foot-row{display:flex;align-items:center;justify-content:space-between;gap:2cqw}
   .foot b{color:var(--text);font-weight:500}
   .foot .dot{color:var(--terra);padding:0 .7cqw}
-  .foot-mail{display:block;text-align:center;color:var(--text);text-decoration:none;letter-spacing:.06em}
+  .foot-ed{line-height:1.35}
+  .foot-mail{color:var(--text);text-decoration:none;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -279,10 +281,8 @@
       </div>
 
       <div class="foot">
-        <div class="foot-row">
-          <span><b>19 al 23 de abril de 2027</b><span class="dot">·</span>San Juan, Argentina</span>
-          <span>Editora asociada<span class="dot">·</span><b>Dra. Maisa Tunik</b></span>
-        </div>
+        <div class="foot-dates"><b>19 al 23 de abril de 2027</b><span class="dot">·</span>San Juan, Argentina</div>
+        <div class="foot-ed">Editora asociada<br><b>Dra. Maisa Tunik</b></div>
         <a class="foot-mail" href="mailto:maisa.tunik.petrosed@gmail.com">maisa.tunik.petrosed@gmail.com</a>
       </div>
 
